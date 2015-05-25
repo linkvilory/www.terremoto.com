@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Css -->
+	<link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+	<link type="text/css" rel="stylesheet" href="css/main.css"/>
+	<link type="text/css" rel="stylesheet" href="css/animate.css"/>
+	<!-- Icons -->
+
+	<!-- Title Web Site -->
+	<title>Terremoto - Sitio Oficial</title>
+	</head>
+	<body>
+
+	<!-- Boostrap Template -->
+
+	<ul id="scene">
+		<li class="layer bg" data-depth="0.00"></li>
+		<li class="layer person" data-depth="0.50"><img src="img/dwayne.png"></li>
+		<li class="layer title col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1" data-depth="0.60"><img src="img/proximamente.png"></li>
+		<li class="layer watchvideo col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1" data-depth="0.60"><a href="http://www.boletosterremoto.com/" target="_blank"><img src="img/compra.png"></a></li>
+		<li class="layer black" data-depth="0.00"><div class="fondoNegro"></div></li>
+		<li class="layer streaming col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1" data-depth="0.00"><script id="52561_f_218412" width="100%" height="100%" src="//player.dacast.com/js/dacast_player.js" class="dacast-video"></script></li>
+		<li class="layer counter col-md-6 col-md-offset-3 col-md-offset-3 col-xs-10 col-xs-offset-1" data-depth="0.00"><span id="clock"></span></li>
+		<li class="layer small left" data-depth="0.80"><a href="https://twitter.com/search?q=SanAndreas" target="_blank"><img src="img/titulo_sm.png"></a></li>
+		<li class="layer small right" data-depth="0.80"><a href="https://twitter.com/search?q=SanAndreas" target="_blank"><img src="img/titulo_sm.png"></a></li>
+	</ul>
+
+
+	<div class="copyright">&copy;2015 Warner Bros. Ent.</div>
+	<!-- Javascript Init -->
+	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="js/jquery.countdown.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery.parallax.js"></script>
+	<script type="text/javascript">
+		$('#clock').countdown('2015/05/23 19:20:00', function(event) {
+			$(this).html(event.strftime('Faltan: %D día %H:%M:%S'));
+		});
+		$('#scene').parallax({
+			calibrateX: false,
+			calibrateY: true,
+			invertX: false,
+			invertY: true,
+			limitX: 10,
+			limitY: 10,
+			scalarX: 2,
+			scalarY: 2,
+			frictionX: 0.1,
+			frictionY: 0.1,
+			originX: 0.5,
+			originY: 0.5
+		});
+		$(document).ready(function(){
+
+			setInterval(function(){
+				$(".layer.small.left, .layer.small.right").addClass("animated infinite swing");
+				setTimeout(function(){
+					$(".layer.small.left, .layer.small.right").removeClass("animated infinite swing");
+				}, 3000);
+			}, 30000);
+
+
+			setInterval(function(){
+				$(".layer.title, .layer.watchvideo").addClass("animated infinite shake");
+				setTimeout(function(){
+					$(".layer.title, .layer.watchvideo").removeClass("animated infinite shake");
+				}, 3000);
+			}, 30000);
+
+		});
+
+	</script>
+	</body>
+</html>
